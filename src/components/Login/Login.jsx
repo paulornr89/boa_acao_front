@@ -1,7 +1,7 @@
 import ButtonLogin from "../Buttons/ButtonLogin";
 import Input from "../Fields/Input";
 import InputPassword from "../Fields/InputPassword";
-import Title from "../Title";
+import Title from "../TitleLogin";
 import './Login.css';
 
 export default function Login() {

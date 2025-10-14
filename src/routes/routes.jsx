@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
-import CadastroDeUsuario from '../components/Login/Cadastro/Cadastro.jsx'
+import CadastroDeUsuario from '../components/Cadastro/Cadastro.jsx'
 import Login from '../components/Login/Login.jsx';
 
 export default function AppRoutes() {

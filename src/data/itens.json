@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "descricao": "Arroz Branco Tipo 1",
+    "tipo": "AN",
+    "unidade": "Pacote(s) 5kg"
+  },
+  {
+    "id": 2,
+    "descricao": "Feijão Carioca",
+    "tipo": "AN",
+    "unidade": "Pacote(s) 1kg"
+  },
+  {
+    "id": 3,
+    "descricao": "Leite Integral UHT",
+    "tipo": "AP",
+    "unidade": "Litro(s)"
+  },
+  {
+    "id": 4,
+    "descricao": "Camiseta de Algodão Adulto (Tamanho M)",
+    "tipo": "VE",
+    "unidade": "Unidade(s)"
+  },
+  {
+    "id": 5,
+    "descricao": "Sabão em Pó",
+    "tipo": "PL",
+    "unidade": "Caixa 1kg"
+  },
+  {
+    "id": 6,
+    "descricao": "Creme Dental",
+    "tipo": "PH",
+    "unidade": "Unidade(s)"
+  },
+  {
+    "id": 7,
+    "descricao": "Macarrão Espaguete",
+    "tipo": "AN",
+    "unidade": "Pacote(s) 500g"
+  },
+  {
+    "id": 8,
+    "descricao": "Iogurte Natural",
+    "tipo": "AP",
+    "unidade": "Unidade(s)"
+  },
+  {
+    "id": 9,
+    "descricao": "Água Sanitária",
+    "tipo": "PL",
+    "unidade": "Litro(s)"
+  },
+  {
+    "id": 10,
+    "descricao": "Calça Jeans Infantil (Tamanho 8)",
+    "tipo": "VE",
+    "unidade": "Unidade(s)"
+  },
+  {
+    "id": 11,
+    "descricao": "Sabonete em Barra",
+    "tipo": "PH",
+    "unidade": "Unidade(s)"
+  },
+  {
+    "id": 12,
+    "descricao": "Óleo de Soja",
+    "tipo": "AN",
+    "unidade": "Litro(s)"
+  }
+]

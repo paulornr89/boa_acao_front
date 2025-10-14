@@ -1,0 +1,62 @@
+[
+  {
+    "id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+    "nome": "Ana Carolina Oliveira",
+    "email": "ana.carolina@example.com",
+    "telefone": "(53) 99123-4567",
+    "cep": "96015-560",
+    "endereco": "Rua General Osório",
+    "numero": "1234",
+    "complemento": "Apto 501",
+    "cidade": "Pelotas",
+    "uf": "RS",
+    "tipo": "D",
+    "documento": "123.456.789-00",
+    "senha": "senha123"
+  },
+  {
+    "id": "b2c3d4e5-f6a7-8901-2345-67890abcdef1",
+    "nome": "Comércio de Ferragens Silva & Filhos Ltda.",
+    "email": "contato@ferragenssilva.com.br",
+    "telefone": "(11) 4004-8899",
+    "cep": "01311-000",
+    "endereco": "Avenida Paulista",
+    "numero": "900",
+    "complemento": "Andar 10, Sala 1005",
+    "cidade": "São Paulo",
+    "uf": "SP",
+    "tipo": "D",
+    "documento": "12.345.678/0001-99",
+    "senha": "admin@123"
+  },
+  {
+    "id": "c3d4e5f6-a7b8-9012-3456-7890abcdef12",
+    "nome": "Marcos Vinicius Almeida",
+    "email": "marcos.almeida@email.net",
+    "telefone": "(21) 98765-1234",
+    "cep": "22071-000",
+    "endereco": "Avenida Atlântica",
+    "numero": "4240",
+    "complemento": "",
+    "cidade": "Rio de Janeiro",
+    "uf": "RJ",
+    "tipo": "D",
+    "documento": "987.654.321-11",
+    "senha": "brasil2025"
+  },
+  {
+    "id": "d4e5f6a7-b8c9-0123-4567-890abcdef123",
+    "nome": "Fernanda Costa",
+    "email": "fernanda.costa@provedor.com",
+    "telefone": "(31) 99988-7766",
+    "cep": "30140-072",
+    "endereco": "Rua da Bahia",
+    "numero": "2121",
+    "complemento": "Casa B",
+    "cidade": "Belo Horizonte",
+    "uf": "MG",
+    "tipo": "D",
+    "documento": "234.567.890-22",
+    "senha": "!QAZ2wsx"
+  }
+]
