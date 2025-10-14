@@ -1,0 +1,11 @@
+.listaItens {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    flex-grow: 1;
+    max-height: 350px; /* Aumenta a área de rolagem */
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE e Edge antigo */
+}

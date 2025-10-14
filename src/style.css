@@ -244,7 +244,7 @@ header .perfil {
     display: none!important;
 }
 
-.listaInstituicoes, .listaDoadores, .listaItens {
+.listaInstituicoes, .listaDoadores {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -337,7 +337,7 @@ header .perfil {
     gap: 20px;
 }
 
-.containerDoacao .listaItens {
+.containerDoacao {
     flex-grow: 1;
     max-height: 350px; /* Aumenta a área de rolagem */
     overflow-y: auto;
