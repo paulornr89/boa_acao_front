@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import AppRouter from './routes/routes';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-       <h1>BoaAção</h1>
+      <AppRouter/>
     </>
   )
 }

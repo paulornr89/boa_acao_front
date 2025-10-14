@@ -22,11 +22,7 @@ body {
     font-style: normal;
     color: #3C474D;
     height: 100vh;  
-    background-color: #68C8E8;  
-}
-
-.fundoApp {
-    background-color: white;
+    background-color: #F5F5F5;  
 }
 
 main {
@@ -42,44 +38,6 @@ main {
     padding-right: 15px;
     display: flex;
     gap: 10px;
-}
-
-/*LOGIN*/
-form {
-    background-color: #68E8C2;
-    border-radius: 5px;    
-    text-align: center;
-    padding: 20px 0 20px 0;
-    box-shadow: 3px 3px 10px;
-    margin: 100px auto 100px auto;
-}
-
-.login {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.login .form-group input + span {
-    align-self: flex-end;
-}
-
-.login .form-group .btnLogin + span {
-    align-self: center;
-}
-
-.btnLogin {
-    width: 30%;
-    height: 50px;
-    border-radius: 25px;
-    background-color: #68C8E8;
-    color: #3C474D;
-    font-size: medium;
-    border-style: hidden;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 5px;
-    align-self: center;
-    box-shadow: 1px 1px 5px;
 }
 
 .btn {    
@@ -675,14 +633,7 @@ a:visited {
         width: 100%;
     } 
     
-    .login {
-        width: 90% !important;
-    }
-
-    .btnLogin {
-        width: 40% !important;
-        height: 45px !important;
-    }
+   
 
     header img {
         width: 40px !important;
@@ -731,10 +682,6 @@ a:visited {
 
     .infoItens .form-group {
         flex-wrap: wrap;
-    }
-
-    .login, form {
-        width: 95% !important;    
     }
 
     form label {
@@ -931,10 +878,6 @@ a:visited {
         width: 40%;
         text-align: center;
         padding-left: 0;
-    }
-
-    .login, form:not(.cadastro) {
-        width: 40%;
     }
 
     .cadastro {
