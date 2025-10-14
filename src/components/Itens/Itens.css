@@ -9,3 +9,14 @@
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE e Edge antigo */
 }
+
+ .mostrarItens {
+    width: 50%;
+    background-color: #99BDDE;
+    border-radius: 5px;    
+    text-align: center;
+    padding: 20px 0 20px 0;
+    box-shadow: 3px 3px 10px;
+    margin: 20px auto 20px auto;
+    min-height: 20vh;
+}

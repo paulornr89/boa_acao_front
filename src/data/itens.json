@@ -3,72 +3,72 @@
     "id": 1,
     "descricao": "Arroz Branco Tipo 1",
     "tipo": "AN",
-    "unidade": "Pacote(s) 5kg"
+    "unidade": "kg"
   },
   {
     "id": 2,
     "descricao": "Feijão Carioca",
     "tipo": "AN",
-    "unidade": "Pacote(s) 1kg"
+    "unidade": "kg"
   },
   {
     "id": 3,
     "descricao": "Leite Integral UHT",
     "tipo": "AP",
-    "unidade": "Litro(s)"
+    "unidade": "Lt"
   },
   {
     "id": 4,
     "descricao": "Camiseta de Algodão Adulto (Tamanho M)",
     "tipo": "VE",
-    "unidade": "Unidade(s)"
+    "unidade": "Unidade"
   },
   {
     "id": 5,
     "descricao": "Sabão em Pó",
     "tipo": "PL",
-    "unidade": "Caixa 1kg"
+    "unidade": "Cx"
   },
   {
     "id": 6,
     "descricao": "Creme Dental",
     "tipo": "PH",
-    "unidade": "Unidade(s)"
+    "unidade": "Un"
   },
   {
     "id": 7,
     "descricao": "Macarrão Espaguete",
     "tipo": "AN",
-    "unidade": "Pacote(s) 500g"
+    "unidade": "Pc"
   },
   {
     "id": 8,
     "descricao": "Iogurte Natural",
     "tipo": "AP",
-    "unidade": "Unidade(s)"
+    "unidade": "Un"
   },
   {
     "id": 9,
     "descricao": "Água Sanitária",
     "tipo": "PL",
-    "unidade": "Litro(s)"
+    "unidade": "Lt"
   },
   {
     "id": 10,
     "descricao": "Calça Jeans Infantil (Tamanho 8)",
     "tipo": "VE",
-    "unidade": "Unidade(s)"
+    "unidade": "Un"
   },
   {
     "id": 11,
     "descricao": "Sabonete em Barra",
     "tipo": "PH",
-    "unidade": "Unidade(s)"
+    "unidade": "Un"
   },
   {
     "id": 12,
     "descricao": "Óleo de Soja",
     "tipo": "AN",
-    "unidade": "Litro(s)"
+    "unidade": "Lt"
   }
 ]
