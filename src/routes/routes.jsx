@@ -5,6 +5,7 @@ import Login from '../components/Login/Login.jsx';
 import Itens from '../components/Itens/Itens.jsx';
 import ListaDeItens from '../components/Itens/ListaDeItens.jsx';
 import Item from '../components/Itens/Item.jsx';
+import NotFound from '../pages/NotFound/NotFound.jsx';
 
 export default function AppRoutes() {
     return (<Routes>
@@ -12,9 +13,9 @@ export default function AppRoutes() {
       <Route path="/login" element={ <Login/> } />
       <Route path="/cadastro" element={ <CadastroDeUsuario/> } />
       <Route path="/itens" element={ <Itens/> }>
-      
-      <Route index element={ <ListaDeItens/> } />
-      <Route path=":id" element={ <Item/> }/>
+        <Route index element={ <ListaDeItens/> } />
+        <Route path=":id" element={ <Item/> }/>
       </Route>
+      <Route path="*" element={<NotFound />}/>
     </Routes>);
 } 
