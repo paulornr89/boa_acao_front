@@ -1,9 +1,16 @@
-export default function Item({item}) {
-    console.log(item)
-    return <div className="item">
-        <h3>{item.descricao}</h3>
-        <p>ID: {item.id}</p>
-        <p>Unidade: {item.unidade}</p>
-        <p>Tipo: {item.tipo}</p>
-    </div>
+import { useParams } from 'react-router-dom';
+import mockItens from '../../data/itens.json';
+import CardItem from './CardItem';
+
+export default function Item() {
+    let { id } = useParams();
+
+    const itemEncontrado = mockItens.find(item => item.id === parseInt(id));
+
+    if(!itemEncontrado) {
+        return <p>Item não encontrado.</p>
+    }
+    return <>            
+            <CardItem key={itemEncontrado.id} item={itemEncontrado}/>;
+        </>
 }

@@ -251,7 +251,7 @@ header .perfil {
     gap: 20px;
 }
 
-.instituicao, .doador, .item {
+.instituicao, .doador {
     background-color: #68C8E8;
     border-radius: 5px;
     display: flex;

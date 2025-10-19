@@ -20,3 +20,14 @@
     margin: 20px auto 20px auto;
     min-height: 20vh;
 }
+
+.item {
+    background-color: #E8A968;
+    border-radius: 5px;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 3px 3px 10px;
+    transition: transform 0.3s;
+}
