@@ -1,0 +1,21 @@
+.perfil {
+    height: 100px;
+    width: 100px;
+}
+
+.cardDoador {
+    width: 400px;
+    height: 20vh;
+    margin: 5px;
+    border-radius: 5px;
+    display: flex;
+    background-color: #99BDDE;
+    align-items: center;
+    gap: 5px;
+    transition: transform 0.3s;
+}
+
+.perfil:hover, .cardDoador:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}

@@ -1,0 +1,8 @@
+.mostraDoadores {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+    justify-content: space-around;
+}

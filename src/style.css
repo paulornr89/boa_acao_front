@@ -107,10 +107,10 @@ header .perfil {
     transition: transform 0.3s;
 }
 
-.voltar img:hover, .perfil:hover {
+/* .voltar img:hover, .perfil:hover {
     transform: scale(1.3);
     cursor: pointer;
-}
+} */
 
 .menu {
     list-style: none;
