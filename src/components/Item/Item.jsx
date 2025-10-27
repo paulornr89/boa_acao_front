@@ -11,6 +11,6 @@ export default function Item() {
         return <p>Item não encontrado.</p>
     }
     return <>            
-            <CardItem key={itemEncontrado.id} item={itemEncontrado}/>;
+            <CardItem item={itemEncontrado}/>;
         </>
 }
