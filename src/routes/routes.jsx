@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-
+import ProtectedRoutes from './ProtectedRoutes.jsx';
 import CadastroDeUsuario from '../components/Cadastro/Cadastro.jsx'
 import Login from '../components/Login/Login.jsx';
 import Itens from '../components/Item/Itens.jsx';
@@ -15,13 +15,15 @@ export default function AppRoutes() {
       <Route path="/" element={ <h1>APP BOA AÇÃO</h1> } />
       <Route path="/login" element={ <Login/> } />
       <Route path="/cadastro" element={ <CadastroDeUsuario/> } />
-      <Route path="/itens" element={ <Itens/> }>
-        <Route index element={ <ListaDeItens/> } />
-        <Route path=":id" element={ <Item/> }/>
-      </Route>
-      <Route path="/doadores" element={ <Doadores/> }>
-        <Route index element={ <ListaDeDoadores/> }/>
-        <Route path=":id" element={ <Doador/> }/>
+      <Route element={<ProtectedRoutes />}>
+        <Route path="/itens" element={ <Itens/> }>
+          <Route index element={ <ListaDeItens/> } />
+          <Route path=":id" element={ <Item/> }/>
+        </Route>
+        <Route path="/doadores" element={ <Doadores/> }>
+          <Route index element={ <ListaDeDoadores/> }/>
+          <Route path=":id" element={ <Doador/> }/>
+        </Route>
       </Route>
       <Route path="*" element={<NotFound />}/>
     </Routes>);

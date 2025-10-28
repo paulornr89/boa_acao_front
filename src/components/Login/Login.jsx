@@ -5,18 +5,20 @@ import logo from '../../assets/logo/logo01.svg';
 import { AuthContext } from "../../context/AuthContext";
 import { useContext, useState } from "react";
 import users from '../../data/doadores.json';
+import { useNavigate } from "react-router-dom"; 
 
 export default function Login() {
+   const navigate = useNavigate();
    const { login: loginUser } = useContext(AuthContext);
    const [login, setLogin] = useState('');
    const [senha, setSenha] = useState('');
 
    function handleLogin(event) {
-        event.preventDefault();
+        //event.preventDefault();
         const usuarioEncontrado = users.find(user_ => (user_.email === login) && (user_.senha === senha));
-        console.log(usuarioEncontrado);
         if(usuarioEncontrado){
-            loginUser(usuarioEncontrado);   
+            loginUser(usuarioEncontrado);  
+            navigate('/itens'); 
         }
     }
      
