@@ -16,8 +16,8 @@
   },
   {
     "id": "b2c3d4e5-f6a7-8901-2345-67890abcdef1",
-    "nome": "Comércio de Ferragens Silva & Filhos Ltda.",
-    "email": "contato@ferragenssilva.com.br",
+    "nome": "Paulo Roberto Nunes da Rosa",
+    "email": "paulo.rosa@exemplo.com",
     "telefone": "(11) 4004-8899",
     "cep": "01311-000",
     "endereco": "Avenida Paulista",
@@ -27,7 +27,7 @@
     "uf": "SP",
     "tipo": "D",
     "documento": "12.345.678/0001-99",
-    "senha": "admin@123"
+    "senha": "123@"
   },
   {
     "id": "c3d4e5f6-a7b8-9012-3456-7890abcdef12",

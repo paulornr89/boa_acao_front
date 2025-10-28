@@ -1,17 +1,40 @@
 import ButtonLogin from "../Buttons/ButtonLogin";
 import Input from "../Fields/Input";
-import Title from "./TitleLogin";
 import './Login.css';
-import logo from '../../assets/logo/logo04.svg';
+import logo from '../../assets/logo/logo01.svg';
+import { AuthContext } from "../../context/AuthContext";
+import { useContext, useState } from "react";
+import users from '../../data/doadores.json';
 
 export default function Login() {
+   const { login: loginUser } = useContext(AuthContext);
+   const [login, setLogin] = useState('');
+   const [senha, setSenha] = useState('');
+
+   function handleLogin(event) {
+        event.preventDefault();
+        const usuarioEncontrado = users.find(user_ => (user_.email === login) && (user_.senha === senha));
+        console.log(usuarioEncontrado);
+        if(usuarioEncontrado){
+            loginUser(usuarioEncontrado);   
+        }
+    }
+     
    return <>
             <form className="login">
                 <img src={logo} alt="Logo Boa Ação" className="logo"/>
-                <Title text='Boa Ação'/>
-                <Input id='login' placeholder='Login'/>
-                <Input type="password" id="senha" placeholder="Senha"/>
-                <ButtonLogin/>                  
+                <Input 
+                    id='login' 
+                    placeholder='Login' 
+                    value={login} 
+                    onChange={e => setLogin(e.target.value)}/>
+                <Input 
+                    type="password" 
+                    id="senha" 
+                    placeholder="Senha" 
+                    value={senha}
+                    onChange={e => setSenha(e.target.value)}/>
+                <ButtonLogin onClick={() => {handleLogin()}}/>                  
             </form>
         </>;
 }

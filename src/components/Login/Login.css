@@ -37,8 +37,9 @@ form {
 }
 
 .logo {
-    height: 200px;
-    width: 200px;
+    margin: 20px auto 20px auto;
+    height: 120px;
+    width: 120px;
 }
 
 @media only screen and (max-width: 768px) {/*SMARTPHONES*/
@@ -58,6 +59,6 @@ form {
 
 @media only screen and (min-width: 768px) {/*DESKTOPS*/
     .login, form:not(.cadastro) {
-        width: 40%;
+        width: 30%;
     }   
 }
