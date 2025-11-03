@@ -1,16 +1,15 @@
-import { useParams } from 'react-router-dom';
-import mockItens from '../../data/itens.json';
+
+import { useContext } from 'react';
 import CardItem from './CardItem';
+import { ItemContext } from '../../context/ItemContext';
+import { useParams } from 'react-router-dom';
 
 export default function Item() {
-    let { id } = useParams();
-
-    const itemEncontrado = mockItens.find(item => item.id === parseInt(id));
-
-    if(!itemEncontrado) {
-        return <p>Item não encontrado.</p>
-    }
+    const { id } = useParams();
+    const { getItem } = useContext(ItemContext);
+    const itemEncontrado = getItem(id);
+    console.log(itemEncontrado);
     return <>            
-            <CardItem item={itemEncontrado}/>;
+            { itemEncontrado ? <CardItem item={itemEncontrado}/> : <p>Item não encontrado.</p> }
         </>
 }

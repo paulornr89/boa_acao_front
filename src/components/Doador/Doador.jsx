@@ -1,12 +1,15 @@
 import { useParams } from 'react-router-dom';
+import { useContext } from 'react';
+import { DoadorContext } from '../../context/DoadorContext';
 import CardDoador from './CardDoador';
-import mockDoadores from '../../data/doadores.json';
+
 
 export default function Doador() {
-    let { id } = useParams();
-    let doador = mockDoadores.find(doador_ => doador_.id === id);
-    
+    const { id } = useParams();
+    const { getDoador } = useContext(DoadorContext);
+    const doadorEncontrado = getDoador(id);
+    console.log(doadorEncontrado)
     return <>
-        <CardDoador doador={doador}/>
+        {doadorEncontrado ? <CardDoador doador={doadorEncontrado}/> : <p>Doador Não Encontrado.</p>}
     </>
 }

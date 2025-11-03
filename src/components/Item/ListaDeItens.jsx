@@ -1,10 +1,14 @@
 import CardItem from './CardItem';
-import mockItens from '../../data/itens.json';
+import { useContext } from 'react';
+import { ItemContext } from '../../context/ItemContext';
 
 export default function ListaDeItens() {
+    const { getAllItems } = useContext(ItemContext);
+    const itens = getAllItems();
+
     return <>
         {
-            mockItens.length > 0 ? mockItens.map((item) => {
+            itens.length > 0 ? itens.map((item) => {
                         return <CardItem key={item.id} item={item}/>
                     })
             : (<p>Nenhum item encontrado.</p>)
