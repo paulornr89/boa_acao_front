@@ -16,7 +16,7 @@ export default function Login() {
    function handleLogin(event) {
         //event.preventDefault();
         const usuarioEncontrado = users.find(user_ => (user_.email === login) && (user_.senha === senha));
-        if(usuarioEncontrado){
+        if(usuarioEncontrado) {
             loginUser(usuarioEncontrado);  
             navigate('/itens'); 
         }
