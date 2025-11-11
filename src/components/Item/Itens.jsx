@@ -7,7 +7,7 @@ export default function Itens() {
             <div className="titulo">
                 <h2 className="titulo-texto">Itens</h2>
             </div>
-            <div className="listaItens">
+            <div className="lista-itens">
                 <Outlet/>
             </div>
         </div>;

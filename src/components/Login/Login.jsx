@@ -1,6 +1,6 @@
 import ButtonLogin from "../Buttons/ButtonLogin";
 import Input from "../Fields/Input";
-import './Login.css';
+// import './Login.css';
 import logo from '../../assets/logo/logo01.svg';
 import { AuthContext } from "../../context/AuthContext";
 import { useContext, useState } from "react";
@@ -23,8 +23,8 @@ export default function Login() {
     }
      
    return <>
-            <form className="login">
-                <img src={logo} alt="Logo Boa Ação" className="logo"/>
+            <form className="rounded-[5px] py-5 shadow-[3px_3px_10px_rgba(0,0,0,0.25)] my-[100px] mx-auto w-[30%] bg-primary text-content">
+                <img src={logo} alt="Logo Boa Ação" className="logo h-[120px] w-[120px]"/>
                 <Input 
                     id='login' 
                     placeholder='Login' 

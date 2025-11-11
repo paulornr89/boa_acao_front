@@ -12,7 +12,9 @@ import Doador from '../components/Doador/Doador.jsx';
 
 export default function AppRoutes() {
     return (<Routes>
-      <Route path="/" element={ <h1>APP BOA AÇÃO</h1> } />
+      <Route path="/" element={  <h1 class="text-3xl font-bold underline">
+    Home - Boa Ação
+  </h1>} />
       <Route path="/login" element={ <Login/> } />
       <Route path="/cadastro" element={ <CadastroDeUsuario/> } />
       <Route element={<ProtectedRoutes />}>

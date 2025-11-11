@@ -1,6 +1,6 @@
 /*LOGIN*/
 form {
-    background-color: #99BDDE;
+   /* background-color: #99BDDE;*/
     border-radius: 5px;    
     text-align: center;
     padding: 20px 0 20px 0;
@@ -17,8 +17,6 @@ form {
     width: 30%;
     height: 50px;
     border-radius: 25px;
-    background-color: #E8A968;
-    color: #3C474D;
     font-size: medium;
     border-style: hidden;
     font-weight: bold;
@@ -55,10 +53,4 @@ form {
     .login, form {
         width: 95% !important;    
     }
-}
-
-@media only screen and (min-width: 768px) {/*DESKTOPS*/
-    .login, form:not(.cadastro) {
-        width: 30%;
-    }   
 }

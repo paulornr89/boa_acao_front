@@ -1,4 +1,19 @@
 /*CONFIGURACOES BASICAS*/
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #99BDDE;
+    --color-secundary: #E8A968;
+    --color-bg-white: #F9F9F9;  
+    --color-content: tomato;
+}
+
+@layer base {
+    body {
+        @apply bg-white text-content font-sans;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -20,9 +35,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
-    color: #3C474D;
     height: 100vh;  
-    background-color: #F9F9F9;  
 }
 
 main {
@@ -44,7 +57,6 @@ main {
     width: 100px;
     height: 50px;
     border-radius: 10px;
-    color: #3C474D;
     font-size: large;
     border-style: hidden;
     font-weight: bold;
@@ -60,13 +72,8 @@ main {
     transform: scale(1.1);
 }
 
-.btnCancelar, .btnSalvarDoacao {
-    background-color: #E8A968;
-    
-}
 
 .btnSalvar {
-    background-color: #68C8E8;
     margin-left: auto;
 }
 
@@ -79,7 +86,6 @@ main {
 
 /*CABEÇALHO*/
 header {
-    background-color: #68C8E8;
     width: 100%;
     height: 10vh;
     display: flex;
@@ -122,7 +128,6 @@ header .perfil {
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    background-color: #68E8C2;
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
@@ -155,7 +160,6 @@ header .perfil {
     width: 100%;
     font-size: x-large;
     font-weight: bold;
-    color: #3C474D;
     animation: mostrar 3s forwards;
 }
 
@@ -204,7 +208,6 @@ header .perfil {
 /*INSTITUICOES, DOADORES E ITENS*/
 .mostrarInstituicoes, .mostrarDoadores {
     width: 70%;
-    background-color: #68E8C2;
     border-radius: 5px;    
     text-align: center;
     padding: 20px 0 20px 0;
@@ -252,7 +255,6 @@ header .perfil {
 }
 
 .instituicao, .doador {
-    background-color: #68C8E8;
     border-radius: 5px;
     display: flex;
     align-self: center;
@@ -269,7 +271,6 @@ header .perfil {
 .instituicao img:not(.icon), .doador img:not(.icon), .item img:not(.icon) {
     height: 80px;
     width: 80px;
-    background-color: white;
     /*padding: 5px;*/
     align-items: center;
     border-radius: 5px;
@@ -297,7 +298,6 @@ header .perfil {
 
 /*DOACAO ITENS*/
 .containerDoacao {
-    background-color: #68E8C2;
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 5px;    
