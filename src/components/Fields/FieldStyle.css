@@ -1,20 +1,3 @@
-.form-control {
-    height: 60px;
-    border-radius: 10px;
-    border: 1px solid #68C8E8;
-    color: #3C474D;
-    font-weight: 300;
-    font-size: large;
-    padding-left: 10px;
-    outline: none;
-}
-
-.form-control:hover {
-    border: 1px solid #3C474D;
-}
-.form-control:focus {
-    border: 1px solid #3C474D;
-}
 
 .list-radio {
     display: flex;

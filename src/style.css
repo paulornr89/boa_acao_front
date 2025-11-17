@@ -15,8 +15,6 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -395,9 +393,6 @@ lay: flex;
     margin-bottom: 10px;
 }
 
-/* .instituicaoDoar input[type='checkbox']:checked {
-    background-color: #E8A968;
-} */
 
 .listaInstituicao {
     overflow-y: auto;
@@ -682,10 +677,6 @@ a:visited {
         width: 90%;
       }
 
-      .form-control {
-        font-size: medium;
-      }
-
       .instituicaoDoar {
         width: 90%;
       }
@@ -968,9 +959,7 @@ a:visited {
         flex-wrap: wrap; /* ← ADICIONE ESSA LINHA */
     }
 
-    .login, form {
-        width: 100%;    
-    } 
+   
 
     form label { 
         word-wrap: break-word; 
