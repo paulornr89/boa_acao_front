@@ -5,7 +5,7 @@
     --color-primary: #99BDDE;
     --color-secundary: #E8A968;
     --color-bg-white: #F9F9F9;  
-    --color-content: tomato;
+    --color-content: #3C474D;
 }
 
 @layer base {
@@ -298,25 +298,8 @@ header .perfil {
 
 /*DOACAO ITENS*/
 .containerDoacao {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;    
-    width: 50%;
-    box-shadow: 3px 3px 10px;
-    padding-bottom: 20px;
-}
 
-.containerDoacao .titulo {
-    text-align: center;
-}
-
-.btnDoacao {
-    background-color: #738B93;
-    width: 50px!important;
-}
-
-.mostrarBtn {
-    display: flex;
+lay: flex;
     justify-content: center;
     gap: 15px;
     width: 50%;
