@@ -1,3 +1,3 @@
 export default function Label({text}) {
-    return <label>{text}</label>;
+    return <label className="font-bold">{text}</label>;
 }

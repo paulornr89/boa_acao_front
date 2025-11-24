@@ -23,9 +23,9 @@ export default function Login() {
     }
      
    return <div className="flex min-h-screen items-center justify-center">
-            <form className="flex flex-col items-center font-bold gap-[10px] rounded-[10px] pt-10 pb-10 shadow-[0_0_15px_var(--color-content)] w-[40%] bg-primary text-content">
+            <form className="flex flex-col items-center font-bold gap-2.5 rounded-[10px] pt-10 pb-10 shadow-[0_0_15px_var(--color-content)] w-[40%] bg-primary text-content">
                 <img src={logo} alt="Logo Boa Ação" className="logo h-[120px] w-[120px]"/>
-                <Input className="w-[280px]"
+                <Input className="w-[300px]"
                     id='login' 
                     placeholder='Login' 
                     value={login} 
