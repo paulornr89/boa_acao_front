@@ -1,8 +1,12 @@
 import { Outlet } from 'react-router-dom';
-import './Doadores.css';
 
 export default function Doadores() {
     return <div className='mostraDoadores'>
-        <Outlet/>
+        <div className="titulo">
+                <h2 className="text-center font-bold text-xl pt-4 pb-4">Doadores</h2>
+        </div>
+        <div className="flex flex-row gap-4 flex-wrap justify-center">
+            <Outlet/>
+        </div>
     </div>;
 }
