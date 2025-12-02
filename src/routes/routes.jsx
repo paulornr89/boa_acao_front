@@ -9,12 +9,11 @@ import NotFound from '../pages/NotFound/NotFound.jsx';
 import Doadores from '../components/Doador/Doadores.jsx';
 import ListaDeDoadores from '../components/Doador/ListaDeDoadores.jsx';
 import Doador from '../components/Doador/Doador.jsx';
+import Home from '../pages/Home.jsx';
 
 export default function AppRoutes() {
     return (<Routes>
-      <Route path="/" element={  <h1 class="text-3xl font-bold underline">
-    Home - Boa Ação
-  </h1>} />
+      <Route path="/" element={ <Home/> } />
       <Route path="/login" element={ <Login/> } />
       <Route path="/cadastro" element={ <CadastroDeUsuario/> } />
       <Route element={<ProtectedRoutes />}>

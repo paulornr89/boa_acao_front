@@ -1,10 +1,21 @@
 import CardItem from './CardItem';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ItemContext } from '../../context/ItemContext';
 
 export default function ListaDeItens() {
+    const [itens, setItens] = useState([]);
     const { getAllItems } = useContext(ItemContext);
-    const itens = getAllItems();
+
+    useEffect(() => {
+        const dados = async () => {
+            const resposta = await getAllItems();
+
+            if(resposta.data) {
+                setItens(resposta.data);
+            }
+        }
+        dados();
+    }, []);
 
     return <>
         {

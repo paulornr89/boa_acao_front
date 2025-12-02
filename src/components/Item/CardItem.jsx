@@ -8,7 +8,7 @@ export default function CardItem({item}) {
             <h3 className='font-bold'>{item.descricao}</h3>
             <p>ID: {item.id}</p>
             <p>Unidade: {item.unidade}</p>
-            <p>Tipo: {item.tipo}</p>
+            <p>Categoria: {item.categoria}</p>
         </div>
     </div>
 }

@@ -4,7 +4,7 @@ import Input from "../Fields/Input";
 import logo from '../../assets/logo/logo01.svg';
 import { AuthContext } from "../../context/AuthContext";
 import { useContext, useState } from "react";
-import users from '../../data/doadores.json';
+//import users from '../../data/doadores.json';
 import { useNavigate } from "react-router-dom"; 
 
 export default function Login() {
@@ -13,11 +13,11 @@ export default function Login() {
    const [login, setLogin] = useState('');
    const [senha, setSenha] = useState('');
 
-   function handleLogin(event) {
-        //event.preventDefault();
-        const usuarioEncontrado = users.find(user_ => (user_.email === login) && (user_.senha === senha));
-        if(usuarioEncontrado) {
-            loginUser(usuarioEncontrado);  
+   async function handleLogin(event) {
+        event.preventDefault();
+        const response = await loginUser({email: login, password: senha});  
+        //const usuarioEncontrado = users.find(user_ => (user_.email === login) && (user_.senha === senha));
+        if(response) {
             navigate('/itens'); 
         }
     }
@@ -36,7 +36,7 @@ export default function Login() {
                     placeholder="Senha" 
                     value={senha}
                     onChange={e => setSenha(e.target.value)}/>
-                <ButtonLogin onClick={() => {handleLogin()}}/>                  
+                <ButtonLogin onClick={(e) => {handleLogin(e)}}/>                  
             </form>
        </div>;
 }
