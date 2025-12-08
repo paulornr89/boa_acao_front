@@ -41,7 +41,7 @@ npm install
 
 O projeto utiliza variáveis de ambiente para conectar com a API.
 
-* Na raiz do projeto, crie um arquivo chamado .env (exatamente assim, sem nome antes do ponto).
+* Na raiz do projeto, crie um arquivo chamado .env.
 * Adicione a seguinte configuração dentro dele:
 
 ```bash
