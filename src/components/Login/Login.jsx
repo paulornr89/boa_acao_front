@@ -3,13 +3,13 @@ import Input from "../Fields/Input";
 // import './Login.css';
 import logo from '../../assets/logo/logo01.svg';
 import { AuthContext } from "../../context/AuthContext";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 //import users from '../../data/doadores.json';
 import { useNavigate } from "react-router-dom"; 
 
 export default function Login() {
    const navigate = useNavigate();
-   const { login: loginUser } = useContext(AuthContext);
+   const { login: loginUser, logout } = useContext(AuthContext);
    const [login, setLogin] = useState('');
    const [senha, setSenha] = useState('');
 
@@ -21,6 +21,10 @@ export default function Login() {
             navigate('/itens'); 
         }
     }
+
+    useEffect(() => {
+        logout();
+    }, []);
      
    return <div className="flex min-h-screen items-center justify-center">
             <form className="flex flex-col items-center font-bold gap-2.5 rounded-[10px] pt-10 pb-10 shadow-[0_0_15px_var(--color-content)] w-[40%] bg-primary text-content">
