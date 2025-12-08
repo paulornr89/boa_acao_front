@@ -6,7 +6,7 @@ export const ItemContext = createContext();
 
 export function ItemProvider({ children }) {
     const getItem = async (id) => {
-        const item = await fetch(`${API_URL}/v1/itens/${id}`)
+        const item = await fetch(`${API_URL}/itens/${id}`)
         .then(response => response.json())
         .then(data => data)
         .catch(error => console.error('Error fetching data:', error));
@@ -14,7 +14,7 @@ export function ItemProvider({ children }) {
     }
 
     const getAllItems = async () => {
-        const itens = await fetch(`${API_URL}/v1/itens`)
+        const itens = await fetch(`${API_URL}/itens`)
         .then(response => response.json())
         .then(data => data)
         .catch(error => console.error('Error fetching data:', error));

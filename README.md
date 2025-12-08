@@ -1,12 +1,56 @@
-# React + Vite
+# 🎁 Boa Ação - Front-end
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é o repositório do front-end do projeto **Boa Ação**. O sistema visa conectar doadores a instituições beneficentes.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* [React](https://react.dev/) - Biblioteca JavaScript para construção de interfaces.
+* [Vite](https://vitejs.dev/) - Ferramenta de build rápida e leve.
+* [Tailwind CSS](https://tailwindcss.com/) - Framework de estilização "utility-first".
+* [Axios](https://axios-http.com/) - Cliente HTTP para comunicação com a API.
 
-## Expanding the ESLint configuration
+## ⚙️ Pré-requisitos
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Antes de começar, certifique-se de ter instalado em sua máquina:
+
+* [Node.js](https://nodejs.org/) (versão 18 ou superior recomendada).
+* [NPM](https://www.npmjs.com/) (geralmente vem com o Node).
+* O backend (API Laravel) rodando localmente.
+
+## 🔧 Instalação e Configuração
+
+Siga os passos abaixo para rodar o projeto localmente:
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/paulornr89/boa_acao_front.git
+
+cd boa_acao
+```
+
+### 2. Instalar Dependências
+
+Instale as bibliotecas necessárias listadas no package.json:
+
+```bash
+npm install
+```
+
+### 3. Configuração do Ambiente (.env)
+
+O projeto utiliza variáveis de ambiente para conectar com a API.
+
+* Na raiz do projeto, crie um arquivo chamado .env (exatamente assim, sem nome antes do ponto).
+* Adicione a seguinte configuração dentro dele:
+
+```bash
+VITE_API_URL=http://localhost:8000/api
+```
+
+### 4. Executar o projeto
+Para iniciar o servidor de desenvolvimento local com o Vite, execute:
+
+```bash
+npm run dev
+```

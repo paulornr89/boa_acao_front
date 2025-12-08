@@ -1,9 +1,24 @@
 import CardDoador from "./CardDoador";
-import mockDoadores from '../../data/doadores.json';
+import { DoadorContext } from "../../context/DoadorContext";
+import { useContext, useState, useEffect } from "react";
+// import mockDoadores from '../../data/doadores.json';
 
 export default function ListaDeDoadores() {
-    if(mockDoadores.length > 0) {
-        return mockDoadores.map(doador => <CardDoador key={doador.id} doador={doador}/>)
+    const [doadores, setDoadores] = useState([]);
+    const { getAllDoadores, getDoador } = useContext(DoadorContext);
+
+    useEffect(() => {
+            const dados = async () => {
+                const resposta = await getAllDoadores();
+
+                if(resposta.data) {
+                    setDoadores(resposta.data);
+                }
+            }
+            dados();
+        }, []);
+    if(doadores.length > 0) {
+        return doadores.map(doador => <CardDoador key={doador.id} doador={doador}/>)
     } else {
         return <p>Nenhum doador encontrado.</p>
     }
