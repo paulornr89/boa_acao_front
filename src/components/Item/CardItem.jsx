@@ -5,7 +5,7 @@ export default function CardItem({item}) {
     duration-300 hover:scale-103">
         <img className="w-30 self-center" src={itens}/>
         <div className='w-60 self-center'>
-            <h3 className='font-bold'>{item.descricao}</h3>
+            <h3 className='font-bold'>{item.nome}</h3>
             <p>ID: {item.id}</p>
             <p>Unidade: {item.unidade}</p>
             <p>Categoria: {item.categoria}</p>

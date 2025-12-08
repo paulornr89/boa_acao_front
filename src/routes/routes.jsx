@@ -10,6 +10,7 @@ import Doadores from '../components/Doador/Doadores.jsx';
 import ListaDeDoadores from '../components/Doador/ListaDeDoadores.jsx';
 import Doador from '../components/Doador/Doador.jsx';
 import Categoria from '../components/Categoria/Categoria.jsx';
+import Organizacao from '../components/Organizacao/Organizacao.jsx';
 import Home from '../pages/Home.jsx';
 
 export default function AppRoutes() {
@@ -18,18 +19,22 @@ export default function AppRoutes() {
       <Route path="/login" element={ <Login/> } />
       <Route path="/cadastro" element={ <CadastroDeUsuario/> } />
       <Route element={<ProtectedRoutes />}>
-        <Route path="/itens" element={ <Itens/> }>
-          <Route index element={ <ListaDeItens/> } />
-          <Route path=":id" element={ <Item/> }/>
-        </Route>
         <Route path="/doadores" element={ <Doadores/> }>
           <Route index element={ <ListaDeDoadores/> }/>
           <Route path=":id" element={ <Doador/> }/>
         </Route>
-        <Route path="/categorias" element={ <Categoria/> }>
-          {/* <Route index element={ <ListaDeDoadores/> }/>
-          <Route path=":id" element={ <Doador/> }/> */}
-        </Route>
+      </Route>
+      <Route path="/itens" element={ <Itens/> }>
+        <Route index element={ <ListaDeItens/> } />
+        <Route path=":id" element={ <Item/> }/>
+      </Route>
+      <Route path="/categorias" element={ <Categoria/> }>
+        {/* <Route index element={ <ListaDeDoadores/> }/>
+        <Route path=":id" element={ <Doador/> }/> */}
+      </Route>
+      <Route path="/organizacoes" element={ <Organizacao/> }>
+        {/* <Route index element={ <ListaDeDoadores/> }/>
+        <Route path=":id" element={ <Doador/> }/> */}
       </Route>
       <Route path="*" element={<NotFound />}/>
     </Routes>);
