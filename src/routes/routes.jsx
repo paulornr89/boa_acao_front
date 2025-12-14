@@ -23,19 +23,22 @@ export default function AppRoutes() {
           <Route index element={ <ListaDeDoadores/> }/>
           <Route path=":id" element={ <Doador/> }/>
         </Route>
+        <Route path="/itens" element={ <Itens/> }>
+          <Route index element={ <ListaDeItens/> } />
+          <Route path=":id" element={ <Item/> }/>
+        </Route>
       </Route>
-      <Route path="/itens" element={ <Itens/> }>
-        <Route index element={ <ListaDeItens/> } />
-        <Route path=":id" element={ <Item/> }/>
+      <Route path="/public">
+        <Route path="itens" element={ <Itens/> }>
+          <Route index element={ <ListaDeItens/> }/>
+        </Route>
+        <Route path="categorias" element={ <Categoria/> }/>
+        <Route path="organizacoes" element={ <Organizacao/> }/>
       </Route>
-      <Route path="/categorias" element={ <Categoria/> }>
         {/* <Route index element={ <ListaDeDoadores/> }/>
         <Route path=":id" element={ <Doador/> }/> */}
-      </Route>
-      <Route path="/organizacoes" element={ <Organizacao/> }>
         {/* <Route index element={ <ListaDeDoadores/> }/>
         <Route path=":id" element={ <Doador/> }/> */}
-      </Route>
       <Route path="*" element={<NotFound />}/>
     </Routes>);
 } 

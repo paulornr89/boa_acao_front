@@ -15,6 +15,7 @@ const EXPIRES_KEY = md5("EXPIRES_IN" + navigator.userAgent).toString();
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(localStorage.getDecryptedItem(USER_KEY) ? JSON.parse(localStorage.getDecryptedItem(USER_KEY)) : null);
     const [token, setToken] = useState(localStorage.getDecryptedItem(ACCESS_TOKEN_KEY) || null);
+    const [isAdmin, setIsAdmin] = useState(useState(localStorage.getDecryptedItem(USER_KEY) ? JSON.parse(localStorage.getDecryptedItem(USER_KEY)).is_admin  : false));
 
     const login = async (userData) => {//userdata são as informações para autenticação login e senha
         try {
@@ -24,10 +25,11 @@ export function AuthProvider({ children }) {
 
             setUser(data.user);
             setToken(data.token);
+            setIsAdmin(data.user.is_admin);
 
             //localStorage.setItem("USER", JSON.stringify(data.user));
             //localStorage.setItem("ACCESS_TOKEN", data.token);
-
+            console.log(data.user);
             localStorage.setEncryptedItem(ACCESS_TOKEN_KEY, data.token);
             localStorage.setEncryptedItem(USER_KEY, JSON.stringify(data.user));
             localStorage.setEncryptedItem(EXPIRES_KEY, expire.toString());
@@ -57,6 +59,9 @@ export function AuthProvider({ children }) {
         token,
         setToken,
         isAuthenticated: !!token,
+        isAdmin,
+        //isDoador,
+        //isOrganizacao,
         login,
         logout
     }

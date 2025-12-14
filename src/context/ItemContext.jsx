@@ -1,4 +1,5 @@
 import { createContext } from "react";
+import axiosClient from "../utils/axios-client";
 const API_URL = import.meta.env.VITE_API_URL;
 //import mockItens from '../data/itens.json';
 
@@ -6,18 +7,19 @@ export const ItemContext = createContext();
 
 export function ItemProvider({ children }) {
     const getItem = async (id) => {
-        const item = await fetch(`${API_URL}/itens/${id}`)
-        .then(response => response.json())
-        .then(data => data)
-        .catch(error => console.error('Error fetching data:', error));
-        return item;//mockItens.find(item => item.id === parseInt(id));
+        const item = await axiosClient.get(`${API_URL}/itens/${id}`)
+        .then(response => response.data)
+        .then(data => data.data)
+        .catch(error => console.error('Error:', error));
+
+        return await item;
     }
 
     const getAllItems = async () => {
-        const itens = await fetch(`${API_URL}/itens`)
-        .then(response => response.json())
-        .then(data => data)
-        .catch(error => console.error('Error fetching data:', error));
+        const itens = await axiosClient.get(`${API_URL}/itens`)
+        .then(response => response.data)
+        .catch(error => console.error('Error:', error));
+
        return itens;
     }
 
