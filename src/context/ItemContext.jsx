@@ -23,8 +23,24 @@ export function ItemProvider({ children }) {
        return itens;
     }
 
+    const store = async (itemData) => {
+        const response = await axiosClient.post(`${API_URL}/itens`, itemData)
+        .then(response => response.data)
+        .catch(error => console.error('Error:', error));
+
+        return response;
+    }
+
     const update = async (id, itemData) => {
         const response = await axiosClient.put(`${API_URL}/itens/${id}`, itemData)
+        .then(response => response.data)
+        .catch(error => console.error('Error:', error));
+
+        return response;
+    }
+    
+    const remove = async (id) => {
+        const response = await axiosClient.delete(`${API_URL}/itens/${id}`)
         .then(response => response.data)
         .catch(error => console.error('Error:', error));
 
@@ -36,7 +52,9 @@ export function ItemProvider({ children }) {
     const itemValues = {
         getItem,
         getAllItems,
-        update
+        update,
+        remove,
+        store
     }
 
     return (<ItemContext.Provider value={itemValues}>

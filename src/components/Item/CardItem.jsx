@@ -5,7 +5,7 @@ import salvar from '../../assets/salvar.png';
 import { useState, useContext, use, useRef, useEffect } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { ItemContext } from '../../context/ItemContext.jsx';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams, useNavigate } from 'react-router-dom';
 import Input from '../Fields/Input.jsx';
 import Select from '../Fields/Select.jsx';
 import FieldSelect from '../Fields/FieldSelect.jsx';
@@ -13,7 +13,8 @@ import FieldSelect from '../Fields/FieldSelect.jsx';
 export default function CardItem({item}) {
     const [ editarItem, setEditarItem ] = useState(false);
     const { isAdmin, isAuthenticated } = useContext(AuthContext);
-    const { update } = useContext(ItemContext);
+    const { update, remove } = useContext(ItemContext);
+    const navigate = useNavigate();
     const location = useLocation();
     const { id } = useParams();
     const nomeRef = useRef();
@@ -66,7 +67,8 @@ export default function CardItem({item}) {
                                         descricao: descricaoRef.current.value
                                     });
                                     console.log(resUpdate);
-                                    setEditarItem(false);
+                                    navigate('/itens');
+                                    //setEditarItem(false);
                                 }catch(e) {
                                     console.error(e);
                                 }
@@ -78,7 +80,14 @@ export default function CardItem({item}) {
                             <button onClick={()=>{setEditarItem(true)}} className='bg-secundary transition-transform duration-200 hover:scale-115 rounded-md w-15 h-15 flex justify-center items-center border'>
                                 <img className='w-7.5 h-7.5' src={editar}/></button>                  
                         }                
-                        <button className='bg-secundary transition-transform duration-200 hover:scale-115 rounded-md w-15 h-15 flex justify-center items-center border'><img className='w-7.5 h-7.5' src={excluir}/></button>
+                        <button 
+                            onClick={async ()=>{
+                                await remove(id); 
+                                //incluir mensagem visível de item removido com sucesso
+                                navigate('/itens');
+                            }}
+                            className='bg-secundary transition-transform duration-200 hover:scale-115 rounded-md w-15 h-15 flex justify-center items-center border'>
+                                <img className='w-7.5 h-7.5' src={excluir}/></button>
                     </div>
                 }
             </div>;
