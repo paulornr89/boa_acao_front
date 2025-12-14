@@ -1,6 +1,7 @@
 import CardItem from './CardItem';
 import { useContext, useEffect, useState } from 'react';
 import { ItemContext } from '../../context/ItemContext';
+import { Link } from 'react-router-dom';
 
 export default function ListaDeItens() {
     const [itens, setItens] = useState([]);
@@ -20,7 +21,11 @@ export default function ListaDeItens() {
     return <>
         {
             itens.length > 0 ? itens.map((item) => {
-                        return <CardItem key={item.id} item={item}/>
+                        return (
+                            <Link key={item.id} to={`/itens/${item.id}`}>
+                                <CardItem item={item}/>
+                            </Link>
+                        );
                     })
             : (<p>Nenhum item encontrado.</p>)
         }

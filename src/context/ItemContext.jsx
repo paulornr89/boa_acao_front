@@ -23,9 +23,20 @@ export function ItemProvider({ children }) {
        return itens;
     }
 
+    const update = async (id, itemData) => {
+        const response = await axiosClient.put(`${API_URL}/itens/${id}`, itemData)
+        .then(response => response.data)
+        .catch(error => console.error('Error:', error));
+
+        console.log(response)
+
+        return response;
+    }
+
     const itemValues = {
         getItem,
-        getAllItems
+        getAllItems,
+        update
     }
 
     return (<ItemContext.Provider value={itemValues}>

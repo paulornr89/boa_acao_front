@@ -5,6 +5,7 @@ import Login from '../components/Login/Login.jsx';
 import Itens from '../components/Item/Itens.jsx';
 import ListaDeItens from '../components/Item/ListaDeItens.jsx';
 import Item from '../components/Item/Item.jsx';
+import NewItem from '../components/Item/NewItem.jsx';
 import NotFound from '../pages/NotFound/NotFound.jsx';
 import Doadores from '../components/Doador/Doadores.jsx';
 import ListaDeDoadores from '../components/Doador/ListaDeDoadores.jsx';
@@ -26,6 +27,7 @@ export default function AppRoutes() {
         <Route path="/itens" element={ <Itens/> }>
           <Route index element={ <ListaDeItens/> } />
           <Route path=":id" element={ <Item/> }/>
+          <Route path="cadastro" element={ <NewItem/> }/>
         </Route>
       </Route>
       <Route path="/public">
