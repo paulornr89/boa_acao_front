@@ -29,7 +29,6 @@ export function AuthProvider({ children }) {
 
             //localStorage.setItem("USER", JSON.stringify(data.user));
             //localStorage.setItem("ACCESS_TOKEN", data.token);
-            console.log(data.user);
             localStorage.setEncryptedItem(ACCESS_TOKEN_KEY, data.token);
             localStorage.setEncryptedItem(USER_KEY, JSON.stringify(data.user));
             localStorage.setEncryptedItem(EXPIRES_KEY, expire.toString());

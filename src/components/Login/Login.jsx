@@ -18,7 +18,7 @@ export default function Login() {
         const response = await loginUser({email: login, password: senha});  
         //const usuarioEncontrado = users.find(user_ => (user_.email === login) && (user_.senha === senha));
         if(response) {
-            navigate('/itens'); 
+            navigate('/inicio'); 
         }
     }
 

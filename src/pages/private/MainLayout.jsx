@@ -10,11 +10,12 @@ export default function MainLayout() {
 
     return <>
         <header className="flex items-center justify-between bg-secundary h-15 pl-5 pr-5">
-            <button onClick={() => setMenuAberto(true)} className="text-white text-3xl focus:outline-none">
+            <button onClick={() => setMenuAberto(true)} className="text-white text-3xl focus:outline-none border p-0.5 rounded-md border-white cursor-pointer 
+            transition-transform duration-300 hover:scale-110">
                 &#9776; 
             </button>
             <img className='h-15 w-15 rounded-md bg-white' src={logo}/>
-            <img className='h-10 w-10 rounded-full border bg-white' src={user}/>
+            <img className='h-10 w-10 rounded-full border border-white bg-white transition-transform duration-300 hover:scale-110 cursor-pointer ' src={user}/>
         </header>
         {
             menuAberto && (
@@ -22,7 +23,7 @@ export default function MainLayout() {
                     <div className="fixed inset-0  bg-opacity-50 z-30" 
                         onClick={fecharMenu}
                     ></div>
-                    <aside className="fixed inset-y-0 left-0 w-64 bg-primary shadow-xl z-40 flex flex-col p-4 transition-transform duration-300">
+                    <aside className="fixed inset-y-0 left-0 w-64 bg-primary shadow-xl z-40 flex flex-col p-4 transition-transform duration-300 border border-r-4 border-white">
 
                     {/* Links de Navegação */}
                     <nav className="flex flex-col gap-4">

@@ -17,14 +17,16 @@ import Organizacao from '../components/Organizacao/Organizacao.jsx';
 import Home from '../pages/Home.jsx';
 import NewCategoria from '../components/Categoria/NewCategoria.jsx';
 import MainLayout from '../pages/private/MainLayout.jsx';
+import Dashboard from '../pages/private/Dashboard.jsx';
 
 export default function AppRoutes() {
     return (<Routes>
-      <Route path="/" element={ <Home/> } />
+      <Route path="/home" element={ <Home/> } />
       <Route path="/login" element={ <Login/> } />
       <Route path="/cadastro" element={ <CadastroDeUsuario/> } />
       <Route element={<ProtectedRoutes />}>
         <Route element={ <MainLayout/> }>
+          <Route path="/inicio" element={ <Dashboard/> }/>
           <Route path="/doadores" element={ <Doadores/> }>
             <Route index element={ <ListaDeDoadores/> }/>
             <Route path=":id" element={ <Doador/> }/>
