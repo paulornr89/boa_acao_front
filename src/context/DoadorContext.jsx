@@ -73,7 +73,9 @@ export function DoadorProvider({ children }) {
         }        
     }
 
-    const update = async (id, doadorData) => {}
+    const update = async (id, doadorData) => {
+        
+    }
 
     const remove = async (id) => {}
 

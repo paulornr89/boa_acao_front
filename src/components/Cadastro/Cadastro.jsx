@@ -96,7 +96,7 @@ export default function CadastroDeUsuario() {
                           is_organization: tipoUsuarioRef.current.value == 'instituicao',
                       });
                       alert('Cadastro realizado com sucesso!');
-                      //navigate('/login');
+                      navigate('/login');
                     } catch (error) {
                       console.error(error);
                       alert('Erro ao realizar cadastro. Por favor, tente novamente.');

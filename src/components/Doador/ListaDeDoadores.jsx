@@ -1,6 +1,7 @@
 import CardDoador from "./CardDoador";
 import { DoadorContext } from "../../context/DoadorContext";
 import { useContext, useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 // import mockDoadores from '../../data/doadores.json';
 
 export default function ListaDeDoadores() {
@@ -18,7 +19,7 @@ export default function ListaDeDoadores() {
             dados();
         }, []);
     if(doadores.length > 0) {
-        return doadores.map(doador => <CardDoador key={doador.id} doador={doador}/>)
+        return doadores.map(doador => <Link key={doador.id} to={`/doadores/${doador.id}`}><CardDoador key={doador.id} doador={doador}/> </Link>)
     } else {
         return <p>Nenhum doador encontrado.</p>
     }
