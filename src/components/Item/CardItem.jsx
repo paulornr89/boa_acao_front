@@ -21,7 +21,7 @@ export default function CardItem({item}) {
     const descricaoRef = useRef();
     const temImagem = item.media && item.media.length > 0;
     const imagemSrc = temImagem ? item.media[0].source : itensDefault;
-    console.log(item.media[0].source)
+    
     useEffect(() => {}, [editarItem]);
 
     return  <div className='w-130 bg-primary flex gap-2 justify-around flex-col h-90 p-5 rounded-md shadow-[1px_1px_5px_rgba(0,0,0,0.3)] transition-transform 
