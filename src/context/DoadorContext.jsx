@@ -74,10 +74,21 @@ export function DoadorProvider({ children }) {
     }
 
     const update = async (id, doadorData) => {
-        
+        const response = await axiosClient.put(`${API_URL}/doadores/${id}`, doadorData)
+            .then(response => response.data)
+            .catch(error => console.error('Error:', error));
+
+        return response;
     }
 
-    const remove = async (id) => {}
+    const remove = async (id) => {
+        const response = await axiosClient.delete(`${API_URL}/users/${id}`)
+            .then(response => response.data)
+            .catch(error => console.error('Error:', error));
+        console.log(response);
+
+        return response;
+    }
 
     const doadoresValues = {
         getDoador,

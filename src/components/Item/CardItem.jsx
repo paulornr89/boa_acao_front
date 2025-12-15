@@ -7,8 +7,6 @@ import { AuthContext } from '../../context/AuthContext';
 import { ItemContext } from '../../context/ItemContext.jsx';
 import { useLocation, useParams, useNavigate } from 'react-router-dom';
 import Input from '../Fields/Input.jsx';
-import Select from '../Fields/Select.jsx';
-import FieldSelect from '../Fields/FieldSelect.jsx';
 
 export default function CardItem({item}) {
     const [ editarItem, setEditarItem ] = useState(false);
