@@ -52,9 +52,7 @@ export default function NewItem() {
                         descricao: descricaoRef.current.value,
                         categoria_id: categoriaRef.current.value 
                     });
-                    console.log(resStore);
-                    //navigate('/itens');
-                    //setEditarItem(false);
+                    navigate('/itens');
                 }catch(e) {
                     console.error(e);
                     throw e;
