@@ -15,6 +15,7 @@ import ListaDeCategorias from '../components/Categoria/ListaDeCategorias.jsx';
 import CardCategoria from '../components/Categoria/CardCategoria.jsx';
 import Organizacao from '../components/Organizacao/Organizacao.jsx';
 import Home from '../pages/Home.jsx';
+import NewCategoria from '../components/Categoria/NewCategoria.jsx';
 
 export default function AppRoutes() {
     return (<Routes>
@@ -33,7 +34,8 @@ export default function AppRoutes() {
         </Route>
         <Route path="/categorias" element={ <Categorias/> }>
           <Route index element={ <ListaDeCategorias/> } />
-          <Route path="/categorias/:id" element={ <CardCategoria/> }/>
+          <Route path=":id" element={ <CardCategoria/> }/>
+          <Route path="cadastro" element={ <NewCategoria/> }/>
         </Route>
       </Route>
       <Route path="/public">

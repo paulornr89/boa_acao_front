@@ -11,9 +11,7 @@ export default function Categoria({ categoria }) {
     const listaDeCategorias = async () => {
         try {
             const { data } = await axiosClient.get('/categorias');
-            console.log(data);
             setCategorias(data.data);
-            console.log(categorias);
         } catch (error) {
             console.error("Erro ao buscar categorias:", error);
         }
