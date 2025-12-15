@@ -16,6 +16,7 @@ export default function NewItem() {
     const descricaoRef = useRef();
     const unidadeRef = useRef();
     const categoriaRef = useRef();
+    const imagemRef = useRef();
 
     const listaDeCategorias = async () => {
         try {
@@ -41,24 +42,46 @@ export default function NewItem() {
                         {value: '', label: 'Selecione uma opção...'},
                         ...categorias.map(categoria => ({value: categoria.id, label: `${categoria.nome}`}))                        
                     ]} ref={categoriaRef}/>
+                    {/* 2. Campo de Upload de Imagem */}
+                    <div className="flex flex-col gap-1  w-90">
+                        <label htmlFor="imagem" className="font-bold">Imagem:</label>
+                        <input 
+                            type="file" 
+                            id="imagem" 
+                            ref={imagemRef} 
+                            accept="image/*"
+                            className="bg-secundary p-2 rounded-md transition-transform duration-200 hover:scale-105 border cursor-pointer"
+                        />
+                    </div>
                 </>                             
            }
            <button onClick={async (e)=>{
-                try {
-                    e.preventDefault();
-                    const resStore = await store({
-                        nome: nomeRef.current.value,
-                        unidade: unidadeRef.current.value,
-                        descricao: descricaoRef.current.value,
-                        categoria_id: categoriaRef.current.value 
-                    });
-                    navigate('/itens');
-                }catch(e) {
-                    console.error(e);
-                    throw e;
-                }
+                    try {
+                        e.preventDefault();
+                        console.log("cadastro de novos itens")
+                        // 3. CRIAÇÃO DO FORMDATA (Crucial para envio de arquivos)
+                        const formData = new FormData();
+                        formData.append('nome', nomeRef.current.value);
+                        formData.append('descricao', descricaoRef.current.value);
+                        formData.append('unidade', unidadeRef.current.value);
+                        formData.append('categoria_id', categoriaRef.current.value);
+
+                        // Verifica se o usuário selecionou um arquivo
+                        if (imagemRef.current.files[0]) {
+                            formData.append('imagem', imagemRef.current.files[0]);
+                        }
+
+                        // Envia o formData diretamente. 
+                        // Nota: O seu ItemContext/store deve passar isso direto para o axios.post
+                        const response = await store(formData);
+                        console.log(response)
+                        navigate('/itens');
+                    }catch(e) {
+                        console.error(e);
+                        throw e;
+                    }
                 }} 
-                className='bg-secundary self-end transition-transform duration-200 hover:scale-115 rounded-md w-15 h-15 flex justify-center items-center border'>
+                className='bg-secundary self-end transition-transform duration-200 hover:scale-115 rounded-md w-15 h-15 flex justify-center items-center border cursor-pointer'>
                 <img className='w-7.5 h-7.5' src={salvar}/></button>
         </form>;
 }

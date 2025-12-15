@@ -24,11 +24,15 @@ export function ItemProvider({ children }) {
     }
 
     const store = async (itemData) => {
-        const response = await axiosClient.post(`${API_URL}/itens`, itemData)
-        .then(response => response.data)
-        .catch(error => console.error('Error:', error));
-
-        return response;
+        try {
+            const response = await axiosClient.post(`${API_URL}/itens`, itemData)
+            .then(response => response.data)
+            .catch(error => console.error('Error:', error));
+    
+            return response;
+        } catch (e) {
+            console.error(e);
+        }
     }
 
     const update = async (id, itemData) => {
