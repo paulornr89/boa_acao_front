@@ -16,6 +16,7 @@ import CardCategoria from '../components/Categoria/CardCategoria.jsx';
 import Organizacao from '../components/Organizacao/Organizacao.jsx';
 import Home from '../pages/Home.jsx';
 import NewCategoria from '../components/Categoria/NewCategoria.jsx';
+import MainLayout from '../pages/private/MainLayout.jsx';
 
 export default function AppRoutes() {
     return (<Routes>
@@ -23,19 +24,21 @@ export default function AppRoutes() {
       <Route path="/login" element={ <Login/> } />
       <Route path="/cadastro" element={ <CadastroDeUsuario/> } />
       <Route element={<ProtectedRoutes />}>
-        <Route path="/doadores" element={ <Doadores/> }>
-          <Route index element={ <ListaDeDoadores/> }/>
-          <Route path=":id" element={ <Doador/> }/>
-        </Route>
-        <Route path="/itens" element={ <Itens/> }>
-          <Route index element={ <ListaDeItens/> } />
-          <Route path=":id" element={ <Item/> }/>
-          <Route path="cadastro" element={ <NewItem/> }/>
-        </Route>
-        <Route path="/categorias" element={ <Categorias/> }>
-          <Route index element={ <ListaDeCategorias/> } />
-          <Route path=":id" element={ <CardCategoria/> }/>
-          <Route path="cadastro" element={ <NewCategoria/> }/>
+        <Route element={ <MainLayout/> }>
+          <Route path="/doadores" element={ <Doadores/> }>
+            <Route index element={ <ListaDeDoadores/> }/>
+            <Route path=":id" element={ <Doador/> }/>
+          </Route>
+          <Route path="/itens" element={ <Itens/> }>
+            <Route index element={ <ListaDeItens/> } />
+            <Route path=":id" element={ <Item/> }/>
+            <Route path="cadastro" element={ <NewItem/> }/>
+          </Route>
+          <Route path="/categorias" element={ <Categorias/> }>
+            <Route index element={ <ListaDeCategorias/> } />
+            <Route path=":id" element={ <CardCategoria/> }/>
+            <Route path="cadastro" element={ <NewCategoria/> }/>
+          </Route>
         </Route>
       </Route>
       <Route path="/public">
