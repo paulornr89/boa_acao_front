@@ -9,7 +9,7 @@ export default function MainLayout() {
     const fecharMenu = () => setMenuAberto(false);
 
     return <>
-        <header className="flex items-center justify-between bg-secundary h-15 pl-5 pr-5">
+        <header className="flex items-center justify-between bg-secundary h-20 pl-5 pr-5">
             <button onClick={() => setMenuAberto(true)} className="text-white text-3xl focus:outline-none border p-0.5 rounded-md border-white cursor-pointer 
             transition-transform duration-300 hover:scale-110">
                 &#9776; 
