@@ -21,7 +21,7 @@ import Dashboard from '../pages/private/Dashboard.jsx';
 
 export default function AppRoutes() {
     return (<Routes>
-      <Route path="/home" element={ <Home/> } />
+      <Route path="/" element={ <Home/> } />
       <Route path="/login" element={ <Login/> } />
       <Route path="/cadastro" element={ <CadastroDeUsuario/> } />
       <Route element={<ProtectedRoutes />}>
