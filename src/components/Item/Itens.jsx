@@ -7,7 +7,7 @@ export default function Itens() {
             <div className="titulo">
                 <h2 className="text-center font-bold text-xl pt-4 pb-4">Itens</h2>
             </div>
-            <div className="flex flex-row gap-4 flex-wrap justify-center">
+            <div className='flex justify-center'>
                 <Outlet/>
             </div>
         </div>;
