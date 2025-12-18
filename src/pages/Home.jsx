@@ -1,18 +1,33 @@
-import { use, useEffect } from "react";
-
+import { use, useEffect, useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import logo from '../assets/logo/logo01.svg';
+import doacao from '../assets/home/caridade2.jpg';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 
 export default function Home() {
-    // useEffect(() => {
-    //     console.log(`API URL: ${API_URL}`); 
-    //     fetch(`${API_URL}/v1/itens`)
-    //     .then(response => response.json())
-    //     .then(data => data)
-    //     .catch(error => console.error('Error fetching data:', error));
-    // }, []);
+    const { logout } = useContext(AuthContext);
 
-    return <div>
-        <h1>APP - BOA AÇÂO</h1>
-    </div>
+    useEffect(() => {
+        logout();
+    }, []);
+
+    return <>
+        <header className="flex items-center justify-between bg-secundary h-20 pl-5 pr-5">                
+            {/* <img className='h-15 w-15 rounded-md bg-white' src={logo}/> */}
+            <h2 className="text-3xl text-white font-bold text-shadow-lg/20">Boa Ação - O destino certo para sua doação!</h2>
+            <Link className="text-white font-bold text-lg hover:text-content text-shadow-lg" to={`/login`}>
+                Acessar
+            </Link>
+        </header>
+        <div>
+            <img 
+                className='w-full h-[400px] object-cover object-center rounded-md' 
+                src={doacao} 
+                alt="Doação"
+            />
+            
+        </div>
+    </>
 }
