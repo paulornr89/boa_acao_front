@@ -28,7 +28,7 @@ export default function Home() {
         </header>
         <div>
             <img 
-                className='w-full h-[400px] object-cover object-center rounded-md' 
+                className='w-full h-[400px] object-cover object-center rounded-md text-sm md:text-lg' 
                 src={doacao} 
                 alt="Doação"
             />
