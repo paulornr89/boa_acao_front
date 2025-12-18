@@ -22,9 +22,9 @@ export default function ListaDeItens() {
 
     return <div>
         <div className='flex justify-end'>
-                    <button className='bg-content text-white h-15 w-50 rounded-md font-bold cursor-pointer shadow-[1px_1px_5px_rgba(0,0,0,0.3)] transition-transform m-2
-                    duration-300 hover:scale-103' 
-                    onClick={()=> {navigate('/itens/cadastro')}}>Novo Item</button>
+            <button className='bg-content text-white h-15 w-50 rounded-md font-bold cursor-pointer shadow-[1px_1px_5px_rgba(0,0,0,0.3)] transition-transform m-2
+            duration-300 hover:scale-103' 
+            onClick={()=> {navigate('/itens/cadastro')}}>Novo Item</button>
         </div>
         <div className="flex flex-row gap-4 flex-wrap justify-center">
             {

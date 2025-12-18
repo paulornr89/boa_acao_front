@@ -32,7 +32,7 @@ export default function NewItem() {
     }, []);
 
     return <form className='w-130 bg-primary flex gap-2 justify-around flex-col p-5 rounded-md shadow-[1px_1px_5px_rgba(0,0,0,0.3)] transition-transform'>
-            <h1 className='text-2xl font-bold text-center'>Cadastrar ITem</h1>
+            <h1 className='text-2xl font-bold text-center'>Cadastrar Item</h1>
             { isAdmin && isAuthenticated &&
                 <>
                     <FieldInput text="Nome" type="text" id="nome" ref={nomeRef}/>

@@ -10,7 +10,7 @@ export default function MainLayout() {
 
     return <>
         <header className="flex items-center justify-between bg-secundary h-20 pl-5 pr-5">
-            <button onClick={() => setMenuAberto(true)} className="text-white text-3xl focus:outline-none border p-0.5 rounded-md border-white cursor-pointer 
+            <button onClick={() => setMenuAberto(true)} className="text-white text-3xl flex justify-center items-center focus:outline-none border p-0.5 w-10 h-10 rounded-md border-white cursor-pointer 
             transition-transform duration-300 hover:scale-110">
                 &#9776; 
             </button>
