@@ -6,6 +6,15 @@
     --color-secundary: #E8A968;
     --color-bg-white: #F9F9F9;  
     --color-content: #3C474D;
+
+   --animate-pulsando: pulsando 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+    @keyframes pulsando {
+        50% {
+            /* opacity: 0.5; */
+            scale: 1.01;
+        }
+    }
 }
 
 @layer base {

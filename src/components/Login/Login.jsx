@@ -1,7 +1,7 @@
 import ButtonLogin from "../Buttons/ButtonLogin";
 import Input from "../Fields/Input";
 // import './Login.css';
-import logo from '../../assets/logo/logo01.svg';
+import logo from '../../assets/logo/logo_1.png';
 import { AuthContext } from "../../context/AuthContext";
 import { useContext, useState, useEffect } from "react";
 //import users from '../../data/doadores.json';
@@ -27,8 +27,8 @@ export default function Login() {
     }, []);
      
    return <div className="flex min-h-screen items-center justify-center">
-            <form className="flex flex-col items-center font-bold gap-2.5 rounded-[10px] pt-10 pb-10 shadow-[0_0_15px_var(--color-content)] w-[40%] bg-primary text-content">
-                <img src={logo} alt="Logo Boa Ação" className="logo h-[120px] w-[120px]"/>
+            <form className="flex flex-col items-center font-bold gap-2.5 rounded-[10px] pt-10 pb-10 shadow-[0_0_15px_var(--color-content)] w-[40%] text-content">
+                <img src={logo} alt="Logo Boa Ação" className="logo h-auto w-[200px] object-contain"/>
                 <Input className="w-[300px]"
                     id='login' 
                     placeholder='Login' 
