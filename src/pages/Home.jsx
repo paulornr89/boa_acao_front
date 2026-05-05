@@ -15,6 +15,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';  /* inclui as bolinhas para passar as imagens */
 import 'swiper/css/effect-fade'; 
 import 'swiper/css/navigation'; /* inclui as setas para passar as imagens */ 
+import SplitText from "../components/SplitText";
 
 export default function Home() {
     const { logout } = useContext(AuthContext);
@@ -29,7 +30,13 @@ export default function Home() {
                 <SvgAnimado/>              
                 {/* <img className='h-15 w-15 rounded-md bg-white' src={logo}/> */}
                 <h1 className="font-bold text-white leading-tight text-xs sm:text-sm md:text-xl max-w-[150px]  
-                            md:max-w-none text-shadow-lg/20">Boa Ação - O destino certo para sua doação!</h1>
+                            md:max-w-none text-shadow-lg/20">
+                                 <SplitText
+                                    text="Boa Ação - O destino certo para sua doação!"
+                                    delay={100}
+                                    duration={0.4}
+                                />  
+                                </h1>
                 <Link className="text-white font-bold text-lg hover:text-content text-shadow-lg" to={`/login`}>
                     Acessar
                 </Link>
