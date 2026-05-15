@@ -2,6 +2,7 @@ import { useEffect, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import doacao from '../assets/home/caridade2.jpg';
 // import slider1 from '../assets/home/slider1.jpg';
+import CoracaoCena from "../components/CoracaoCena";
 import slider2 from '../assets/home/slider2.jpg';
 import slider3 from '../assets/home/slider3.jpg';
 import slider4 from '../assets/home/slider4.jpg';
@@ -22,6 +23,7 @@ export default function Home() {
 
     useEffect(() => {
         logout();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return <>
@@ -50,6 +52,15 @@ export default function Home() {
                     />
                 </SimpleParallax>                
             </div>
+            {/* SEÇÃO 3D INTERATIVA */}
+            <section className="w-full h-[600px] bg-secundar relative flex flex-col items-center justify-center">
+                <div className="absolute top-10 z-10 text-center pointer-events-none">
+                    <h2 className="text-3xl text-secundary font-bold text-shadow-lg">Sua Doação é o que nos move</h2>
+                </div>
+                
+                {/* CHAMADA DO COMPONENTE 3D */}
+                <CoracaoCena />
+            </section>
             <section className="w-full">
                 <Swiper
                     modules={[Autoplay, Pagination, EffectFade, Navigation]}
