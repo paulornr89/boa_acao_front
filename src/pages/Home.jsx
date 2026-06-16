@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import doacao from '../assets/home/caridade2.jpg';
 // import slider1 from '../assets/home/slider1.jpg';
@@ -17,9 +17,11 @@ import 'swiper/css/pagination';  /* inclui as bolinhas para passar as imagens */
 import 'swiper/css/effect-fade'; 
 import 'swiper/css/navigation'; /* inclui as setas para passar as imagens */ 
 import SplitText from "../components/SplitText";
+import JogoFase from "../components/JogoFase";
 
 export default function Home() {
     const { logout } = useContext(AuthContext);
+    const [jogoAberto, setJogoAberto] = useState(false);
 
     useEffect(() => {
         logout();
@@ -39,9 +41,17 @@ export default function Home() {
                                     duration={0.4}
                                 />  
                                 </h1>
-                <Link className="text-white font-bold text-lg hover:text-content text-shadow-lg" to={`/login`}>
-                    Acessar
-                </Link>
+                <div className="flex items-center gap-4">
+                    <button
+                        onClick={() => setJogoAberto(true)}
+                        className="bg-white text-content font-bold text-sm px-4 py-2 rounded-lg hover:bg-content hover:text-white transition shadow-md"
+                    >
+                        Jogar
+                    </button>
+                    <Link className="text-white font-bold text-lg hover:text-content text-shadow-lg" to={`/login`}>
+                        Acessar
+                    </Link>
+                </div>
             </header>
             <div className="min-h-[150vh] overflow-hidden height-[600px]">
                 <SimpleParallax scale={1.5} orientation="down" overflow={false}>
@@ -123,5 +133,26 @@ export default function Home() {
                 <p className="text-white text-sm md:text-lg text-shadow-lg">© 2026 Boa Ação. Todos os direitos reservados.</p>
             </footer>
         </div>
+        {jogoAberto && (
+            <div style={{
+                position: 'fixed', inset: 0, zIndex: 9999,
+                background: '#000',
+            }}>
+                <button
+                    onClick={() => setJogoAberto(false)}
+                    style={{
+                        position: 'absolute', top: 16, right: 16, zIndex: 10000,
+                        background: '#EB6767', color: '#fff', border: 'none',
+                        padding: '8px 18px', borderRadius: 8,
+                        fontWeight: 'bold', cursor: 'pointer', fontSize: 15,
+                        fontFamily: 'Open Sans, sans-serif',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.4)',
+                    }}
+                >
+                    X Fechar
+                </button>
+                <JogoFase aoFechar={() => setJogoAberto(false)} />
+            </div>
+        )}
     </>
 }
