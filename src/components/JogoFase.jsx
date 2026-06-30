@@ -47,7 +47,7 @@ export default function JogoFase() {
 
     //cria a caixa para coletar doacoes
     const box = new THREE.Group()
-    const boxBody = new THREE.Mesh(new THREE.BoxGeometry(1.5, 1.1, 1.1))
+    const boxBody = new THREE.Mesh(new THREE.BoxGeometry(1.5, 1.1, 1.1), new THREE.MeshStandardMaterial({ color: 0xE8A968 }))
     box.add(boxBody)
     box.position.set(0, 0.55, 0)
     scene.add(box)
@@ -60,6 +60,7 @@ export default function JogoFase() {
     const itemColors = [0xEB6767, 0x6AADDE]
     const baseItem   = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 16), new THREE.MeshStandardMaterial())//cria esfera
     const itemsQtd   = 10
+
     //gera itens para coleta de forma aleatoria
     const items = Array.from({ length: itemsQtd }).map((_, i) => {
       const color = itemColors[i % itemColors.length]
@@ -73,7 +74,7 @@ export default function JogoFase() {
         lastCollectedTime: -1000 
       }
     })
-    items.forEach(item => item.hit.center.copy(item.model.position))
+    items.forEach(item => item.hit.center.copy(item.model.position))//sincroniza posicao de colisao com visual
 
     let totalScore  = 0
     let GAME_PAUSED = false
@@ -105,11 +106,22 @@ export default function JogoFase() {
     }
 
     function moveBox() {
+      let moveAmount = 0
+      
       if (box && joystick.x) {
         const ww = container.clientWidth
         const newX = box.position.x + (joystick.x - ww / 2) / ww * 0.25
         box.position.x = Math.max(-3, Math.min(3, newX))
       }
+      
+      if (keys.left) moveAmount = -0.15
+      if (keys.right) moveAmount = 0.15
+      
+      if (moveAmount !== 0) {
+        const newX = box.position.x + moveAmount
+        box.position.x = Math.max(-3, Math.min(3, newX))
+      }
+      
       boxHit.center.copy(box.position)
     }
 
@@ -119,6 +131,22 @@ export default function JogoFase() {
     }
 
     window.addEventListener('mousemove', updateJoystick)
+
+    const keys = { left: false, right: false }
+
+    window.addEventListener('keydown', (evento) => {
+      if (evento.key === 'ArrowLeft' || evento.key === 'a' || evento.key === 'A') 
+        keys.left = true
+      if (evento.key === 'ArrowRight' || evento.key === 'd' || evento.key === 'D') 
+        keys.right = true
+    })
+
+    window.addEventListener('keyup', (evento) => {
+      if (evento.key === 'ArrowLeft' || evento.key === 'a' || evento.key === 'A') 
+        keys.left = false
+      if (evento.key === 'ArrowRight' || evento.key === 'd' || evento.key === 'D') 
+        keys.right = false
+    })
 
     function animate() {
       controls.update()
@@ -137,6 +165,8 @@ export default function JogoFase() {
 
     return () => {
       window.removeEventListener('mousemove', updateJoystick)
+      window.removeEventListener('keydown', updateJoystick)  
+      window.removeEventListener('keyup', updateJoystick)   
       if (container.contains(renderer.domElement)) container.removeChild(renderer.domElement)
       renderer.dispose()
     }
