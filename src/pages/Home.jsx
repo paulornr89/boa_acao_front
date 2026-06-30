@@ -151,7 +151,7 @@ export default function Home() {
                 >
                     X Fechar
                 </button>
-                <JogoFase aoFechar={() => setJogoAberto(false)} />
+                <JogoFase />
             </div>
         )}
     </>
