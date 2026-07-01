@@ -6,7 +6,9 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 export default function JogoFase() {
   const refContainer = useRef(null)
   const [score, setScore]   = useState(0)
+  const [miss, setMiss]   = useState(0)
   const [ganhou, setGanhou] = useState(false)
+  const [perdeu, setPerdeu] = useState(false)
 
   useEffect(() => {
     const container = refContainer.current
@@ -45,7 +47,6 @@ export default function JogoFase() {
 
     initSkybox()
 
-    //cria a caixa para coletar doacoes
     const box = new THREE.Group()
     const boxBody = new THREE.Mesh(new THREE.BoxGeometry(1.5, 1.1, 1.1), new THREE.MeshStandardMaterial({ color: 0xE8A968 }))
     box.add(boxBody)
@@ -53,7 +54,8 @@ export default function JogoFase() {
     scene.add(box)
 
     const joystick = { x: null, y: null }
-
+    
+    //areas
     const boxHit    = new THREE.Sphere(box.position.clone(), 0.8)
     const hitSphere = new THREE.Sphere(new THREE.Vector3(), 0.5)
 
@@ -71,20 +73,34 @@ export default function JogoFase() {
       return { 
         model, 
         hit: hitSphere.clone(),
-        lastCollectedTime: -1000 
+        lastCollectedTime: -1000,
+        wasAlreadyMissed: false 
       }
     })
     items.forEach(item => item.hit.center.copy(item.model.position))//sincroniza posicao de colisao com visual
 
-    let totalScore  = 0
     let GAME_PAUSED = false
 
     function moveItem(item) {
       item.model.position.z += 0.15
       item.model.rotation.y += 0.03
       if (item.model.position.z > 5) {
+        if (!item.wasAlreadyMissed) {
+          item.wasAlreadyMissed = true  // ← marca PRIMEIRO
+          setMiss(prevMiss => {
+            const newMiss = prevMiss + 1
+            if (newMiss >= 10) {
+              GAME_PAUSED = true
+              setPerdeu(true)
+            }
+            return newMiss
+          })
+        }
+        
+        // ← DEPOIS reseta posição e flag
         item.model.position.z = -(Math.random() * 100 + 10)
         item.model.position.x = (Math.random() - 0.5) * 8
+        item.wasAlreadyMissed = false  // ← reseta pra poder contar novamente
       }
       item.hit.center.copy(item.model.position)
     }
@@ -94,15 +110,26 @@ export default function JogoFase() {
     }
 
     function showCollected(item) {
-      item.model.position.z = -(Math.random() * 100 + 10)
+      const now = performance.now()
+      
+      if (now - item.lastCollectedTime < 500) {
+        return
+      }
+      
+      item.lastCollectedTime = now
+      
+      item.model.position.z = -(Math.random() * 50 + 10)
       item.model.position.x = (Math.random() - 0.5) * 8
       item.hit.center.copy(item.model.position)
-      totalScore++
-      setScore(totalScore)
-      if (totalScore >= 10) {
-        GAME_PAUSED = true
-        setGanhou(true)
-      }
+      
+      setScore(prevScore => {
+        const newScore = prevScore + 1
+        if (newScore >= 10) {
+          GAME_PAUSED = true
+          setGanhou(true)
+        }
+        return newScore
+      })
     }
 
     function moveBox() {
@@ -180,10 +207,11 @@ export default function JogoFase() {
         padding: '8px 22px', borderRadius: 8, fontWeight: 'bold', fontSize: 22,
         fontFamily: 'Open Sans, sans-serif', pointerEvents: 'none',
       }}>
-        Pontos: {score}
+        Pontos: {score}<br/>
+        Perdas: {miss}
       </div>
 
-      {ganhou && (
+      {(ganhou || perdeu) && (
         <div style={{
           position: 'absolute', inset: 0, zIndex: 20,
           background: 'rgba(0,0,0,0.75)',
@@ -191,10 +219,10 @@ export default function JogoFase() {
           fontFamily: 'Open Sans, sans-serif',
         }}>
           <h2 style={{ fontSize: 38, fontWeight: 'bold', color: '#E8A968', marginBottom: 12 }}>
-            Parabens!
+            { ganhou ? "Parabéns!" : (perdeu ? "Game Over" : "")}
           </h2>
           <p style={{ fontSize: 18, color: '#F9F9F9', marginBottom: 28 }}>
-            Voce coletou 10 doacoes!
+            { ganhou ? "Voce coletou 10 doacoes!" : (perdeu ? "Você perdeu 10 doações!" : "")}
           </p>
         </div>
       )}
